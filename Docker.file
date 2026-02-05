@@ -1,0 +1,26 @@
+FROM node:18-alpine
+
+# تثبيت FFmpeg و dependencies
+RUN apk add --no-cache ffmpeg python3 make g++
+
+# إنشاء مجلد العمل
+WORKDIR /app
+
+# نسخ package files
+COPY package*.json ./
+
+# تثبيت dependencies
+RUN npm ci --only=production
+
+# نسخ الكود
+COPY . .
+
+# مجلد للملفات المؤقتة
+RUN mkdir -p temp
+
+# تشغيل كـ non-root user
+RUN chown -R node:node /app
+USER node
+
+# تشغيل البوت
+CMD ["npm", "start"]

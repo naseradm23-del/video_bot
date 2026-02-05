@@ -1,0 +1,29 @@
+{
+  "name": "telegram-video-quality-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot for video quality enhancement",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"No tests yet\"",
+    "format": "prettier --write \"src/**/*.js\""
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "telegraf": "^4.12.2",
+    "axios": "^1.6.0",
+    "ffmpeg-static": "^5.2.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "fs-extra": "^11.2.0",
+    "dotenv": "^16.3.1",
+    "mime-types": "^2.1.35",
+    "progress": "^2.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "prettier": "^3.1.0"
+  }
+}
